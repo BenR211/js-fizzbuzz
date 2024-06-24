@@ -1,4 +1,23 @@
 // This is our main function
+
+function multiplesOfSeven(currentStr, num){
+    if (num % 7 === 0 ){
+        if (num % 5 === 0 || num % 3 === 0){
+            currentStr += " Bang";
+        }
+        else {currentStr = "Bang"}
+    }
+    return currentStr;
+}
+
+function multipleOfEleven(currentStr, num){
+    if (num % 11 == 0){
+        return "Bong";
+    }
+    return currentStr;
+}
+
+
 function fizzbuzz() {
 
     var myStr = "";
@@ -17,8 +36,11 @@ function fizzbuzz() {
         else {
             myStr = i;
         }
-        //console.log("Hello, World!");
+
+        myStr = multiplesOfSeven(myStr, i);
+        myStr = multipleOfEleven(myStr, i);
         console.log(myStr);
+
     }
 
     // Put your code here...
