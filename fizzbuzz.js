@@ -38,31 +38,52 @@ function multipleOfthirteen(currentStr, num){
 
 }
 
+
+
+function multiplesOfSeventeen(currentStr, num){
+    if (num % 17 === 0){
+        var num_words = currentStr.length / 4;
+        var copy_end = currentStr.length
+        var copy_start = currentStr.length - 4;
+        var newString = "";
+        for (var x = 0; x < num_words; x ++){
+            newString = newString + currentStr.substring(copy_start, copy_end);
+            copy_start -= 4;
+            copy_end -=4;
+        }
+        return newString;
+    }
+    return currentStr;
+}
+
 function fizzbuzz() {
 
     
 
-    for (var i = 1 ; i < 100; i ++){
+    for (var i = 1 ; i < 300; i ++){
+        // This section completes the basic fizzbuzz challenge
         var myStr = "";
         if (i % 3 === 0 && i % 5 === 0){
-           myStr = i + " FizzBuzz";
+           myStr ="FizzBuzz";
         }
         else if(i % 3 == 0){
-            myStr = i + " Fizz";
+            myStr = "Fizz";
 
         }
         else if (i % 5 === 0){
-            myStr = i + " Buzz";
+            myStr = "Buzz";
         }
-
+        // Here extension rules are applied
         myStr = multiplesOfSeven(myStr, i);
         myStr = multipleOfEleven(myStr, i);
         myStr = multipleOfthirteen(myStr, i);
+        myStr = multiplesOfSeventeen(myStr, i);
         
+        //print number if is not a multiple of any of the input numbers
         if (myStr.length == 0){
             myStr = i;
         }
-        console.log(myStr);
+        console.log(myStr + " |" + i);
 
     }
 
