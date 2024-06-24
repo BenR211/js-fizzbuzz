@@ -18,27 +18,50 @@ function multipleOfEleven(currentStr, num){
 }
 
 
+function indexOfB(currentStr){
+    var index = currentStr.indexOf('B');
+    return index;
+
+}
+
+function multipleOfthirteen(currentStr, num){
+    if (num % 13 == 0){
+        const indx = indexOfB(currentStr)
+        if (indx == -1){
+            return currentStr += "Fezz";
+        }
+        else {
+            return currentStr = currentStr.substring(0,indx) + "Fezz" + currentStr.substring(indx, currentStr.length);
+        }
+    }
+    return currentStr
+
+}
+
 function fizzbuzz() {
 
-    var myStr = "";
+    
 
     for (var i = 1 ; i < 100; i ++){
+        var myStr = "";
         if (i % 3 === 0 && i % 5 === 0){
-           myStr = i + " fizzbuzz";
+           myStr = i + " FizzBuzz";
         }
         else if(i % 3 == 0){
-            myStr = i + " fizz";
+            myStr = i + " Fizz";
 
         }
         else if (i % 5 === 0){
-            myStr = i + " buzz";
-        }
-        else {
-            myStr = i;
+            myStr = i + " Buzz";
         }
 
         myStr = multiplesOfSeven(myStr, i);
         myStr = multipleOfEleven(myStr, i);
+        myStr = multipleOfthirteen(myStr, i);
+        
+        if (myStr.length == 0){
+            myStr = i;
+        }
         console.log(myStr);
 
     }
@@ -49,4 +72,6 @@ function fizzbuzz() {
 
 // Now, we run the main function:
 fizzbuzz();
+//indexOfB("appBle");
+//console.log("appBle".substring(0,3));
 
