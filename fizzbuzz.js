@@ -1,18 +1,24 @@
 // This is our main function
 function fizzbuzz() {
 
-    for (var i = 0 ; i < 100; i ++){
+    var myStr = "";
+
+    for (var i = 1 ; i < 100; i ++){
         if (i % 3 === 0 && i % 5 === 0){
-            console.log(i + " fizzbuzz");
+           myStr = i + " fizzbuzz";
         }
         else if(i % 3 == 0){
-            console.log(i + " fizz")
+            myStr = i + " fizz";
 
         }
         else if (i % 5 === 0){
-            console.log(i + " buzz");
+            myStr = i + " buzz";
+        }
+        else {
+            myStr = i;
         }
         //console.log("Hello, World!");
+        console.log(myStr);
     }
 
     // Put your code here...
